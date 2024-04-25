@@ -1,5 +1,6 @@
 package com.Dame_hair_pikine.Dame_hair_pikine.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -19,9 +20,10 @@ public class DetailVent {
     @JoinColumn(name="id_vente ")
     private Vente vente;
 
+    @JsonIgnore
     @ManyToOne
-    @JoinColumn(name="id_produit")
-    private Produit produit;
+    @JoinColumn(name="id_stock" )
+    private Stock stock;
      @Column
     private Integer quantite;
 

@@ -5,6 +5,8 @@ import lombok.*;
 import org.springframework.data.annotation.LastModifiedDate;
 
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Getter
@@ -22,6 +24,9 @@ public class Stock{
     @ManyToOne
     @JoinColumn(name="id_produit")
     private Produit produit;
+
+    @OneToMany(mappedBy = "vente",fetch=FetchType.EAGER)
+    private List<DetailVent> listedetailVente= new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name="id_user")

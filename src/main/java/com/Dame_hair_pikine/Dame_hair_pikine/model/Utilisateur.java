@@ -21,6 +21,9 @@ private Integer id;
     @Column(length = 20)
     private String name;
 
+    @Column(length = 20)
+    private String tel;
+
     @Column(length = 64)
     private String password;
 

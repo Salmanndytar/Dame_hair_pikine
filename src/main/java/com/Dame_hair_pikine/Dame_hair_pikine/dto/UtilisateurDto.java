@@ -14,10 +14,11 @@ import java.util.List;
 public class UtilisateurDto {
     private Integer id;
     private String name;
+    private String prenom;//Ob
+    private String password;//generer auto
 
-    private String password;
-    private String prenom;
-    private String mail;
+    private String mail;//Ob
+    private String tel;
     private Boolean etat;
 
     private Collection<Role> roles= new ArrayList<>();
@@ -32,6 +33,7 @@ public class UtilisateurDto {
                 .etat(user.getEtat())
                 .password(user.getPassword())
                 .mail(user.getMail())
+                .tel(user.getTel())
                 .build();}
     public static Utilisateur toEntity(UtilisateurDto userDto){
         return    Utilisateur.builder()
@@ -40,6 +42,7 @@ public class UtilisateurDto {
                 .name(userDto.getPrenom())
                 .password(userDto.getPassword())
                 .mail(userDto.getMail())
+                .tel(userDto.getTel())
                 .etat(userDto.getEtat())
                 .roles(userDto.getRoles())
                 .build();}

@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.LastModifiedDate;
 
+import java.awt.*;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +26,8 @@ public class Produit {
 
     @Column(length = 500)
     private String description;
+
+
     @Column
     @LastModifiedDate
     private Instant date;
